@@ -1,0 +1,18 @@
+name: 测试例程
+
+on: push
+
+jobs:
+  Spear-build:
+    name: 编译Spear相关文件
+    runs-on: macos-latest
+    steps:
+      - name: 读取仓库内容
+        uses: actions/checkout@v4
+
+      - name: 编译文件
+        run: |
+          brew install portaudio
+          ls -l
+          make
+
