@@ -34,13 +34,6 @@ jobs:
       - name: Install Docker
         run: brew install docker
 
-      - name: Install latest Docker CLI
-        run: brew upgrade docker
-      
-      
-      - name: Verify Docker installation
-        run: docker compose version
-
       - name: 安装依赖并且编译文件
         run: |
           brew install portaudio
