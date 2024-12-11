@@ -10,7 +10,7 @@ jobs:
       - name: 读取仓库内容
         uses: actions/checkout@v4
 
-      - name: 编译文件
+      - name: 安装依赖并且编译文件
         run: |
           brew install portaudio
           ls -l
