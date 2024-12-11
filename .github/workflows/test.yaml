@@ -33,6 +33,15 @@ jobs:
       
       - name: Install Docker
         run: brew install docker
+
+      - name: Start Docker daemon
+        run: |
+          # 尝试启动 Docker 应用
+          open /Applications/Docker.app
+          # 等待 Docker 守护进程启动
+          sleep 60
+          # 验证 Docker 是否正在运行
+          docker info
       
       - name: Install Docker Compose
         run: brew install docker-compose
