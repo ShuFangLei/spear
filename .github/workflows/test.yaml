@@ -37,7 +37,7 @@ jobs:
       # 启动 Colima（Docker）
       - name: Start Colima
         run: |
-          colima start --cpu 4 --memory 4 --timeout 600
+          colima start --cpu 4 --memory 4
 
       # 等待 Docker 服务启动
       - name: Wait for Docker to be ready
