@@ -56,7 +56,7 @@ jobs:
 
   Spear-build-macos:
     name: 编译Spear相关文件(macOS)
-    runs-on: macos-13
+    runs-on: macos-latest
     steps:
       - name: 读取仓库内容
         uses: actions/checkout@v4
