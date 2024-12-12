@@ -93,6 +93,7 @@ jobs:
           brew install colima docker
           brew services start colima
           colima start
+          docker info
 
 
       # # 5. 等待 Docker 守护进程启动
