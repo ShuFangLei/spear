@@ -58,34 +58,35 @@ jobs:
     name: 编译Spear相关文件(macOS)
     runs-on: macos-latest
     steps:
-      - name: 读取仓库内容
-        uses: actions/checkout@v4
+      # - name: 读取仓库内容
+      #   uses: actions/checkout@v4
 
-      - name: Set up Go
-        uses: actions/setup-go@v4
-        with:
-          go-version: '1.23' 
+      # - name: Set up Go
+      #   uses: actions/setup-go@v4
+      #   with:
+      #     go-version: '1.23' 
 
-      - name: Verify Go version
-        run: go version
+      # - name: Verify Go version
+      #   run: go version
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.13'
+      # - name: Set up Python
+      #   uses: actions/setup-python@v4
+      #   with:
+      #     python-version: '3.13'
       
-      - name: Verify Python version
-        run: python --version
+      # - name: Verify Python version
+      #   run: python --version
 
-      - name: Install Python dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install build
+      # - name: Install Python dependencies
+      #   run: |
+      #     python -m pip install --upgrade pip
+      #     pip install build
 
       - name: Install Colima and Docker
         run: |
-          brew install colima docker docker-compose
+          brew install colima docker
           colima version
+          brew services start colima
 
       #    colima start --vm-type=qemu
 
