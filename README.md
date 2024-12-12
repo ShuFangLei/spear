@@ -15,6 +15,23 @@ SPEAR is an advanced AI Agent platform designed to support multiple runtime envi
   - **Local Mode**: Run a single AI agent workload on a local machine.
   - **Cluster Mode**: Designed to support AI agent workloads across multiple clusters. *(Not yet implemented)*
 
+
+| Feature               | Runtime Support       | Status                |
+| --------------------- | --------------------- | -------------------   |
+| **Runtime Support**   | Process               | ✅ Supported         |
+|                       | Docker Container      | ✅ Supported         |
+|                       | WebAssembly           | ❌ Not supported     |
+|                       | Kubernetes            | ❌ Not supported     |
+| **Operating Modes**   | Local Mode            | ✅ Supported         |
+|                       | Cluster Mode          | ✅ Supported         |
+|  **Deployment**       | Auto Deployment       | ⏳ Work in Progress  |
+|  **Agent Service**    | Planning              | ❌ Not supported     |
+|                       | Memory                | ❌ Not supported     |
+|                       | Tools                 | ⏳ Work in Progress  |
+
+
+
+
 ## Build Instructions
 
 To build SPEAR and its related components, run the following command:
