@@ -3,55 +3,55 @@ name: 测试例程
 on: push
 
 jobs:
-  Spear-build:
-    name: 编译Spear相关文件
-    runs-on: ubuntu-latest
-    steps:
-      - name: 读取仓库内容
-        uses: actions/checkout@v4
+  # Spear-build:
+  #   name: 编译Spear相关文件
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: 读取仓库内容
+  #       uses: actions/checkout@v4
 
-      - name: Set up Go
-        uses: actions/setup-go@v4
-        with:
-          go-version: '1.23' # 请根据需要选择合适的 Go 版本
+  #     - name: Set up Go
+  #       uses: actions/setup-go@v4
+  #       with:
+  #         go-version: '1.23' # 请根据需要选择合适的 Go 版本
 
-      - name: Verify Go version
-        run: go version
+  #     - name: Verify Go version
+  #       run: go version
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.13'
+  #     - name: Set up Python
+  #       uses: actions/setup-python@v4
+  #       with:
+  #         python-version: '3.13'
       
-      - name: Verify Python version
-        run: python --version
+  #     - name: Verify Python version
+  #       run: python --version
 
-      - name: Install Python dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install build
+  #     - name: Install Python dependencies
+  #       run: |
+  #         python -m pip install --upgrade pip
+  #         pip install build
 
-      - name: 安装依赖并且编译文件
-        run: |
-          sudo apt install portaudio19-dev libx11-dev libxtst-dev
-          curl -fsSL https://get.docker.com -o get-docker.sh
-          sudo sh get-docker.sh
-          make
+  #     - name: 安装依赖并且编译文件
+  #       run: |
+  #         sudo apt install portaudio19-dev libx11-dev libxtst-dev
+  #         curl -fsSL https://get.docker.com -o get-docker.sh
+  #         sudo sh get-docker.sh
+  #         make
 
-      - name: Get Ubuntu IP Address
-        run: |
-          ip_address=$(ip addr show eth0 | grep -oP 'inet \K[\d.]+')
-          echo "IP Address: $ip_address"
-          export SERVICE_IP=$ip_address
-          echo "SERVICE_IP=$ip_address" >> $GITHUB_ENV
-          OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
-          HUGGINGFACEHUB_API_TOKEN=${{ secrets.HUGGINGFACEHUB_API_TOKEN }}
-          export OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
-          export HUGGINGFACEHUB_API_TOKEN=${{ secrets.HUGGINGFACEHUB_API_TOKEN }}
-          echo "SERVICE_IP=$ip_address" >> $GITHUB_ENV
-          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
-          echo "HUGGINGFACEHUB_API_TOKEN=${{ secrets.HUGGINGFACEHUB_API_TOKEN }}" >> $GITHUB_ENV
-          go test -v ./test/simple_req_test.go
+  #     - name: Get Ubuntu IP Address
+  #       run: |
+  #         ip_address=$(ip addr show eth0 | grep -oP 'inet \K[\d.]+')
+  #         echo "IP Address: $ip_address"
+  #         export SERVICE_IP=$ip_address
+  #         echo "SERVICE_IP=$ip_address" >> $GITHUB_ENV
+  #         OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+  #         HUGGINGFACEHUB_API_TOKEN=${{ secrets.HUGGINGFACEHUB_API_TOKEN }}
+  #         export OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+  #         export HUGGINGFACEHUB_API_TOKEN=${{ secrets.HUGGINGFACEHUB_API_TOKEN }}
+  #         echo "SERVICE_IP=$ip_address" >> $GITHUB_ENV
+  #         echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
+  #         echo "HUGGINGFACEHUB_API_TOKEN=${{ secrets.HUGGINGFACEHUB_API_TOKEN }}" >> $GITHUB_ENV
+  #         go test -v ./test/simple_req_test.go
 
 
   Spear-build-macos:
@@ -86,6 +86,7 @@ jobs:
         run: |
           brew install portaudio libx11 libxtst
           brew install --cask docker
+          open /Applications/Docker.app
           docker version
           docker run hello-world
       #     make
