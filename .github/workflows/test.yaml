@@ -77,17 +77,30 @@ jobs:
       # - name: Verify Python version
       #   run: python --version
 
-      # - name: Install Python dependencies
-      #   run: |
-      #     python -m pip install --upgrade pip
-      #     pip install build
-
-      - name: Install Colima and Docker
+      - name: Install Python dependencies
         run: |
-          brew install colima docker
-          colima version
-          brew services start colima
-          docker run hello-world
+          python -m pip install --upgrade pip
+          pip install build
+
+      - name: Install Colima
+        run: |
+          curl -sSL https://github.com/abiosoft/colima/releases/download/v0.3.2/colima-linux-amd64 -o /usr/local/bin/colima
+          sudo chmod +x /usr/local/bin/colima
+
+          # 4. 启动 Colima 虚拟机并配置 Docker
+      - name: Start Colima
+        run: |
+          colima start --cpu 4 --memory 4GB
+              
+          # 5. 等待 Docker 守护进程启动
+      - name: Wait for Docker to start
+        run: |
+              while ! docker info > /dev/null 2>&1; do
+                echo "Waiting for Docker to start..."
+                sleep 5
+              done
+
+              docker version
 
       #    colima start --vm-type=qemu
 
