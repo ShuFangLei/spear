@@ -5,7 +5,7 @@ README.md
 SPEAR is an advanced AI Agent platform designed to support multiple runtime environments. It provides flexibility and scalability for running AI agent workloads in various configurations. SPEAR is currently in development, with ongoing features and improvements.
 
 ## Features
-<table border="1" cellspacing="0" cellpadding="5" style="width: 100%;">
+<table border="1" cellspacing="0" cellpadding="10" style="border-collapse: collapse;width: 100%;">
   <tr>
     <td style="width: 30%;">Features</td>
     <td style="width: 35%;">Support</td>
