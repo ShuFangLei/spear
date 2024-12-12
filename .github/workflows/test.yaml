@@ -36,7 +36,6 @@ jobs:
           sudo apt install portaudio19-dev libx11-dev libxtst-dev
           curl -fsSL https://get.docker.com -o get-docker.sh
           sudo sh get-docker.sh
-          docker version
           make
 
       - name: Get Ubuntu IP Address
@@ -52,5 +51,4 @@ jobs:
           echo "SERVICE_IP=$ip_address" >> $GITHUB_ENV
           echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
           echo "HUGGINGFACEHUB_API_TOKEN=${{ secrets.HUGGINGFACEHUB_API_TOKEN }}" >> $GITHUB_ENV
-          ls -l
           go test -v ./test/simple_req_test.go

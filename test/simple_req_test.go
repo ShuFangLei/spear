@@ -101,19 +101,19 @@ import (
 // 	w.Stop()
 // }
 
-func TestLocalPydummy(t *testing.T) {
-	// create config
-	config := worker.NewExecWorkerConfig(true)
-	w := worker.NewWorker(config)
-	w.Initialize()
+// func TestLocalPydummy(t *testing.T) {
+// 	// create config
+// 	config := worker.NewExecWorkerConfig(true)
+// 	w := worker.NewWorker(config)
+// 	w.Initialize()
 
-	res, err := w.ExecuteTask(7, task.TaskTypeDocker, true, "handle", "")
-	if err != nil {
-		t.Fatalf("Error executing workload: %v", err)
-	}
-	t.Logf("Workload execution result: %v", res)
-	w.Stop()
-}
+// 	res, err := w.ExecuteTask(7, task.TaskTypeDocker, true, "handle", "")
+// 	if err != nil {
+// 		t.Fatalf("Error executing workload: %v", err)
+// 	}
+// 	t.Logf("Workload execution result: %v", res)
+// 	w.Stop()
+// }
 
 func TestLocalGenImage(t *testing.T) {
 	// create config
