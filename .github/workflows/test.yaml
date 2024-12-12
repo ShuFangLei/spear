@@ -34,8 +34,8 @@ jobs:
       - name: 安装依赖并且编译文件
         run: |
           sudo apt install portaudio19-dev libx11-dev libxtst-dev
-          sudo apt-get update
-          sudo apt-get install docker-ce
+          curl -fsSL https://get.docker.com -o get-docker.sh
+          sudo sh get-docker.sh
           docker version
       #    make
 
