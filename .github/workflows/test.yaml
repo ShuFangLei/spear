@@ -44,3 +44,4 @@ jobs:
           export SERVICE_IP=$ip_address
           echo "SERVICE_IP=$ip_address" >> $GITHUB_ENV
           ls -l
+          go test ./test/simple_req_test.go
