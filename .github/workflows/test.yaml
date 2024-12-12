@@ -82,33 +82,29 @@ jobs:
           python -m pip install --upgrade pip
           pip install build
 
+      - name: Set up Homebrew 
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          brew update
+
+      # 3. 安装 Colima
       - name: Install Colima
         run: |
-          curl -sSL https://github.com/abiosoft/colima/releases/download/v0.3.2/colima-linux-amd64 -o /usr/local/bin/colima
-          sudo chmod +x /usr/local/bin/colima
+          brew install colima
 
-          # 4. 启动 Colima 虚拟机并配置 Docker
+      # 4. 启动 Colima
       - name: Start Colima
         run: |
           colima start --cpu 4 --memory 4GB
-              
-          # 5. 等待 Docker 守护进程启动
+
+      # 5. 等待 Docker 守护进程启动
       - name: Wait for Docker to start
         run: |
-              while ! docker info > /dev/null 2>&1; do
-                echo "Waiting for Docker to start..."
-                sleep 5
-              done
-
-              docker version
-
-      #    colima start --vm-type=qemu
-
-      #    docker --version
-      #    docker-compose --version
-          
-      #    mkdir -p ~/.docker/cli-plugins
-      #    ln -sfn /usr/local/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+          while ! docker info > /dev/null 2>&1; do
+            echo "Waiting for Docker to start..."
+            sleep 5
+          done
+          docker version
           
 
       # - name: 安装依赖并且编译文件
