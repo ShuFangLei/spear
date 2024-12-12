@@ -90,21 +90,22 @@ jobs:
       # 3. 安装 Colima
       - name: Install Colima docker
         run: |
-          brew install colima docker
+          brew install --cask docker
+          docker info
 
-      # 4. 启动 Colima
-      - name: Start Colima
-        run: |
-          colima start
+      # # 4. 启动 Colima
+      # - name: Start Colima
+      #   run: |
+      #     colima start
 
-      # 5. 等待 Docker 守护进程启动
-      - name: Wait for Docker to start
-        run: |
-          while ! docker info > /dev/null 2>&1; do
-            echo "Waiting for Docker to start..."
-            sleep 5
-          done
-          docker version
+      # # 5. 等待 Docker 守护进程启动
+      # - name: Wait for Docker to start
+      #   run: |
+      #     while ! docker info > /dev/null 2>&1; do
+      #       echo "Waiting for Docker to start..."
+      #       sleep 5
+      #     done
+      #     docker version
           
 
       # - name: 安装依赖并且编译文件
