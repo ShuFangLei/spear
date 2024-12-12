@@ -82,13 +82,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install build
 
-      - name: 安装依赖并且编译文件
+      - name: Install Colima and Docker
         run: |
-          brew install portaudio libx11 libxtst
-          brew install --cask docker
-          open /Applications/Docker.app
-          docker version
-          docker run hello-world
+          brew install colima docker docker-compose
+          mkdir -p ~/.docker/cli-plugins
+          ln -sfn /usr/local/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+          colima start
+          colima version
+
+      # - name: 安装依赖并且编译文件
+      #   run: |
+      #     brew install portaudio libx11 libxtst
+      #     brew install --cask docker
+      #     open /Applications/Docker.app
+      #     docker version
+      #     docker run hello-world
       #     make
 
       # - name: Get macOS IP Address
