@@ -56,7 +56,7 @@ jobs:
 
   Spear-build-macos:
     name: 编译Spear相关文件(macOS)
-    runs-on: macos-12
+    runs-on: macos-13
     steps:
       # - name: 读取仓库内容
       #   uses: actions/checkout@v4
@@ -90,18 +90,23 @@ jobs:
       # 3. 安装 Colima
       - name: Install Colima docker
         run: |
-          brew install docker
-          colima start
+            HOMEBREW_NO_AUTO_UPDATE=1 brew install --cask docker
+            sudo /Applications/Docker.app/Contents/MacOS/Docker --unattended --install-privileged-components
+            open -a /Applications/Docker.app --args --unattended --accept-license
+            echo "We are waiting for Docker to be up and running. It can take over 2 minutes..."
+            while ! /Applications/Docker.app/Contents/Resources/bin/docker info &>/dev/null; do sleep 1; done
+      #     brew install docker
+      #     colima start
 
 
-      # 5. 等待 Docker 守护进程启动
-      - name: Wait for Docker to start
-        run: |
-          while ! docker info > /dev/null 2>&1; do
-            echo "Waiting for Docker to start..."
-            sleep 5
-          done
-          docker version
+      # # 5. 等待 Docker 守护进程启动
+      # - name: Wait for Docker to start
+      #   run: |
+      #     while ! docker info > /dev/null 2>&1; do
+      #       echo "Waiting for Docker to start..."
+      #       sleep 5
+      #     done
+      #     docker version
           
 
       # - name: 安装依赖并且编译文件
