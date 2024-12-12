@@ -5,55 +5,55 @@ README.md
 SPEAR is an advanced AI Agent platform designed to support multiple runtime environments. It provides flexibility and scalability for running AI agent workloads in various configurations. SPEAR is currently in development, with ongoing features and improvements.
 
 ## Features
-<table border="1" cellspacing="0" cellpadding="10" style="width: 200%;">
+<table border="1" cellspacing="0" cellpadding="12" style="width: 100%; border-color: #D3D3D3;">
   <tr>
-    <td style="width: 30%; font-weight: bold;">Features</td>
-    <td style="width: 35%; font-weight: bold;">Support</td>
-    <td style="width: 35%; font-weight: bold;">Status</td>
+    <td style="width: 30%; font-weight: bold; border-color: #D3D3D3;">Features</td>
+    <td style="width: 35%; font-weight: bold; border-color: #D3D3D3;">Support</td>
+    <td style="width: 35%; font-weight: bold; border-color: #D3D3D3;">Status</td>
   </tr>
   <tr>
-    <td rowspan="4" style="font-weight: bold;">Runtime Support</td>
-    <td>Process</td>
-    <td>✅ Supported</td>
+    <td rowspan="4" style="font-weight: bold; border-color: #D3D3D3;">Runtime Support</td>
+    <td style="border-color: #D3D3D3;">Process</td>
+    <td style="border-color: #D3D3D3;">✅ Supported</td>
   </tr>
   <tr>
-    <td>Docker Container</td>
-    <td>✅ Supported</td>
+    <td style="border-color: #D3D3D3;">Docker Container</td>
+    <td style="border-color: #D3D3D3;">✅ Supported</td>
   </tr>
   <tr>
-    <td>WebAssembly</td>
-    <td>❌ Not supported</td>
+    <td style="border-color: #D3D3D3;">WebAssembly</td>
+    <td style="border-color: #D3D3D3;">❌ Not supported</td>
   </tr>
   <tr>
-    <td>Kubernetes</td>
-    <td>❌ Not supported</td>
+    <td style="border-color: #D3D3D3;">Kubernetes</td>
+    <td style="border-color: #D3D3D3;">❌ Not supported</td>
   </tr>
   <tr>
-    <td rowspan="2" style="font-weight: bold;">Operating Modes</td>
-    <td>Local Mode</td>
-    <td>✅ Supported</td>
+    <td rowspan="2" style="font-weight: bold; border-color: #D3D3D3;">Operating Modes</td>
+    <td style="border-color: #D3D3D3;">Local Mode</td>
+    <td style="border-color: #D3D3D3;">✅ Supported</td>
   </tr>
   <tr>
-    <td>Cluster Mode</td>
-    <td>❌ Not supported</td>
+    <td style="border-color: #D3D3D3;">Cluster Mode</td>
+    <td style="border-color: #D3D3D3;">❌ Not supported</td>
   </tr>
   <tr>
-    <td style="font-weight: bold;">Deployment</td>
-    <td>Auto Deployment</td>
-    <td>⏳ Work in Progress</td>
+    <td style="font-weight: bold; border-color: #D3D3D3;">Deployment</td>
+    <td style="border-color: #D3D3D3;">Auto Deployment</td>
+    <td style="border-color: #D3D3D3;">⏳ Work in Progress</td>
   </tr>
   <tr>
-    <td rowspan="3" style="font-weight: bold;">Agent Service</td>
-    <td>Planning</td>
-    <td>❌ Not supported</td>
+    <td rowspan="3" style="font-weight: bold; border-color: #D3D3D3;">Agent Service</td>
+    <td style="border-color: #D3D3D3;">Planning</td>
+    <td style="border-color: #D3D3D3;">❌ Not supported</td>
   </tr>
   <tr>
-    <td>Memory</td>
-    <td>❌ Not supported</td>
+    <td style="border-color: #D3D3D3;">Memory</td>
+    <td style="border-color: #D3D3D3;">❌ Not supported</td>
   </tr>
   <tr>
-    <td>Tools</td>
-    <td>⏳ Work in Progress</td>
+    <td style="border-color: #D3D3D3;">Tools</td>
+    <td style="border-color: #D3D3D3;">⏳ Work in Progress</td>
   </tr>
 </table>
 
