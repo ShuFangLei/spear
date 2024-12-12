@@ -89,8 +89,10 @@ jobs:
 
           colima start --cpu 2 --memory 4 --disk 50
           
-          docker --version
-          docker-compose --version
+          cat /Users/runner/.colima/_lima/colima/ha.stderr.log
+
+      #    docker --version
+      #    docker-compose --version
           
       #    mkdir -p ~/.docker/cli-plugins
       #    ln -sfn /usr/local/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
