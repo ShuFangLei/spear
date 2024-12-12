@@ -5,6 +5,58 @@ README.md
 SPEAR is an advanced AI Agent platform designed to support multiple runtime environments. It provides flexibility and scalability for running AI agent workloads in various configurations. SPEAR is currently in development, with ongoing features and improvements.
 
 ## Features
+<table border="1" cellspacing="0" cellpadding="5" style="width: 70%;">
+  <tr>
+    <td style="width: 20%;">Features</td>
+    <td style="width: 25%;">Support</td>
+    <td style="width: 25%;">Status</td>
+  </tr>
+  <tr>
+    <td rowspan="4">Runtime Support</td>
+    <td>Process</td>
+    <td>✅ Supported</td>
+  </tr>
+  <tr>
+    <td>Docker Container</td>
+    <td>✅ Supported</td>
+  </tr>
+  <tr>
+    <td>WebAssembly</td>
+    <td>❌ Not supported</td>
+  </tr>
+  <tr>
+    <td>Kubernetes</td>
+    <td>❌ Not supported</td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">Operating Modes</td>
+    <td>Cluster Mode</td>
+    <td>✅ Supported</td>
+  </tr>
+    <tr>
+    <td>Local Mode</td>
+    <td>✅ Supported</td>
+  </tr>
+  <tr>
+    <td>Deployment</td>
+    <td>Auto Deployment</td>
+    <td>⏳ Work in Progress</td>
+  </tr>
+  <tr>
+    <td rowspan="3">Agent Service</td>
+    <td>Planning</td>
+    <td>❌ Not supported</td>
+  </tr>
+  <tr>
+    <td>Memory</td>
+    <td>❌ Not supported</td>
+  </tr>
+  <tr>
+    <td>Tools</td>
+    <td>⏳ Work in Progress</td>
+  </tr>
+</table>
 
 - **Runtime Support**:
   - Process
@@ -14,20 +66,6 @@ SPEAR is an advanced AI Agent platform designed to support multiple runtime envi
 - **Operating Modes**:
   - **Local Mode**: Run a single AI agent workload on a local machine.
   - **Cluster Mode**: Designed to support AI agent workloads across multiple clusters. *(Not yet implemented)*
-
-
-| Feature               | Runtime Support       | Status                |
-| --------------------- | --------------------- | -------------------   |
-| **Runtime Support**   | Process               | ✅ Supported         |
-|                       | Docker Container      | ✅ Supported         |
-|                       | WebAssembly           | ❌ Not supported     |
-|                       | Kubernetes            | ❌ Not supported     |
-| **Operating Modes**   | Local Mode            | ✅ Supported         |
-|                       | Cluster Mode          | ✅ Supported         |
-|  **Deployment**       | Auto Deployment       | ⏳ Work in Progress  |
-|  **Agent Service**    | Planning              | ❌ Not supported     |
-|                       | Memory                | ❌ Not supported     |
-|                       | Tools                 | ⏳ Work in Progress  |
 
 
 
