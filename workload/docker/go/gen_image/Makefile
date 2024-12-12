@@ -5,7 +5,7 @@ OUTPUT_DIR := $(shell pwd)/bin
 PROJ_NAME := $(shell basename $(CURRENT_DIR))
 
 all: build
-	docker-compose build
+	docker compose build
 
 start:
 	GOOS=linux go build -o $(OUTPUT_DIR)/start \
