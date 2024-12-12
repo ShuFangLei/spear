@@ -1,57 +1,86 @@
-name: 测试例程
+# name: 测试例程
 
-on: push
+# on: push
+
+# jobs:
+#   Spear-build:
+#     name: 编译Spear相关文件
+#     runs-on: macos-latest
+#     steps:
+#       - name: 读取仓库内容
+#         uses: actions/checkout@v4
+
+#       - name: Set up Go
+#         uses: actions/setup-go@v4
+#         with:
+#           go-version: '1.23' # 请根据需要选择合适的 Go 版本
+
+#       - name: Verify Go version
+#         run: go version
+
+#       - name: Set up Python
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: '3.13'
+      
+#       - name: Verify Python version
+#         run: python --version
+
+#       - name: Install Python dependencies
+#         run: |
+#           python -m pip install --upgrade pip
+#           pip install build
+      
+#       - name: Install Docker
+#         run: brew install docker
+
+#       - name: Start Docker daemon
+#         run: |
+#           # 尝试启动 Docker 应用
+#           open /Applications/Docker.app
+#           # 等待 Docker 守护进程启动
+#           sleep 60
+#           # 验证 Docker 是否正在运行
+#           docker info
+      
+#       - name: Install Docker Compose
+#         run: brew install docker-compose
+
+#       - name: Verify Docker Compose version
+#         run: docker-compose --version
+
+#       - name: 安装依赖并且编译文件
+#         run: |
+#           brew install portaudio
+#           ls -l
+#           make
+
+name: Build with Docker on macOS
+on:
+  push:
+    branches: [ main ]
 
 jobs:
-  Spear-build:
-    name: 编译Spear相关文件
+  build:
     runs-on: macos-latest
     steps:
-      - name: 读取仓库内容
-        uses: actions/checkout@v4
+      - name: Check out repository
+        uses: actions/checkout@v2
 
-      - name: Set up Go
-        uses: actions/setup-go@v4
-        with:
-          go-version: '1.23' # 请根据需要选择合适的 Go 版本
-
-      - name: Verify Go version
-        run: go version
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.13'
-      
-      - name: Verify Python version
-        run: python --version
-
-      - name: Install Python dependencies
+      - name: Install Docker and Colima
         run: |
-          python -m pip install --upgrade pip
-          pip install build
-      
-      - name: Install Docker
-        run: brew install docker
+          brew install colima docker docker-buildx docker-compose
 
-      - name: Start Docker daemon
+      - name: Start Colima (with Docker runtime)
         run: |
-          # 尝试启动 Docker 应用
-          open /Applications/Docker.app
-          # 等待 Docker 守护进程启动
-          sleep 60
-          # 验证 Docker 是否正在运行
-          docker info
-      
-      - name: Install Docker Compose
-        run: brew install docker-compose
+          colima start --runtime docker
+          # colima 默认支持 Docker，但是这里加上参数以确保
+          # 若不指定runtime默认也是docker，可以省略该行
 
-      - name: Verify Docker Compose version
-        run: docker-compose --version
+      - name: Use Colima context
+        run: docker context use colima
 
-      - name: 安装依赖并且编译文件
-        run: |
-          brew install portaudio
-          ls -l
-          make
+      - name: Test Docker
+        run: docker run hello-world
+
 
