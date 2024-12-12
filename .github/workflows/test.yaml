@@ -45,12 +45,12 @@ jobs:
           echo "IP Address: $ip_address"
           export SERVICE_IP=$ip_address
           echo "SERVICE_IP=$ip_address" >> $GITHUB_ENV
-          OPENAI_API_KEY='sk-tgSX19ayjMdHQqBxLkJrsVbgoHzJUteUlOYzxCnrkYvmgvjk'
-          HUGGINGFACEHUB_API_TOKEN='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'
-          export OPENAI_API_KEY='sk-tgSX19ayjMdHQqBxLkJrsVbgoHzJUteUlOYzxCnrkYvmgvjk'
-          export HUGGINGFACEHUB_API_TOKEN='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'
+          OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+          HUGGINGFACEHUB_API_TOKEN=${{ secrets.HUGGINGFACEHUB_API_TOKEN }}
+          export OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+          export HUGGINGFACEHUB_API_TOKEN=${{ secrets.HUGGINGFACEHUB_API_TOKEN }}
           echo "SERVICE_IP=$ip_address" >> $GITHUB_ENV
-          echo "OPENAI_API_KEY='sk-tgSX19ayjMdHQqBxLkJrsVbgoHzJUteUlOYzxCnrkYvmgvjk'" >> $GITHUB_ENV
-          echo "HUGGINGFACEHUB_API_TOKEN='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'" >> $GITHUB_ENV
+          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
+          echo "HUGGINGFACEHUB_API_TOKEN=${{ secrets.HUGGINGFACEHUB_API_TOKEN }}" >> $GITHUB_ENV
           ls -l
           go test -v ./test/simple_req_test.go
