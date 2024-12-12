@@ -33,7 +33,7 @@ jobs:
 
       - name: 安装依赖并且编译文件
         run: |
-          pip install portaudio
+          apt install portaudio19-dev
           ls -l
           ip addr show
           make
