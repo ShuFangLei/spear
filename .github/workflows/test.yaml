@@ -90,10 +90,10 @@ jobs:
       # 3. 安装 Colima
       - name: Install Colima docker
         run: |
-          brew install colima docker
+          brew install colima docker qemu
           colima version
           colima start --cpu 3 --memory 6 --disk 100 --vm-type=qemu --mount-type=sshfs --dns=1.1.1.1
-    
+
 
       # 5. 等待 Docker 守护进程启动
       - name: Wait for Docker to start
