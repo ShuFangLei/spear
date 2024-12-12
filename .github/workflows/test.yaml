@@ -90,7 +90,7 @@ jobs:
       # 3. 安装 Colima
       - name: Install Colima docker
         run: |
-          brew install colima docker
+          brew reinstall colima docker
           brew services start colima
           colima start
           docker info
