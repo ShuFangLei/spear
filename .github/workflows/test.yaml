@@ -91,7 +91,7 @@ jobs:
       - name: Install Colima docker
         run: |
           brew install colima docker
-          rm /Users/dipdhanesha/.lima/colima/ha.sock
+          brew services start colima
           colima start
 
 
