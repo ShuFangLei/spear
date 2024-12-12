@@ -87,7 +87,7 @@ jobs:
           brew install colima docker docker-compose
           colima version
 
-          colima start --vm-type=qemu
+      #    colima start --vm-type=qemu
 
       #    docker --version
       #    docker-compose --version
