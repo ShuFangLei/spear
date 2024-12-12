@@ -87,6 +87,7 @@ jobs:
           brew install colima docker
           colima version
           brew services start colima
+          docker run hello-world
 
       #    colima start --vm-type=qemu
 
