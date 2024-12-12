@@ -5,14 +5,14 @@ README.md
 SPEAR is an advanced AI Agent platform designed to support multiple runtime environments. It provides flexibility and scalability for running AI agent workloads in various configurations. SPEAR is currently in development, with ongoing features and improvements.
 
 ## Features
-<table border="1" cellspacing="0" cellpadding="10" style="border-collapse: collapse;width: 100%;">
+<table border="1" cellspacing="0" cellpadding="10" style="border-collapse: collapse; width: 100%;">
   <tr>
-    <td style="width: 30%;">Features</td>
-    <td style="width: 35%;">Support</td>
-    <td style="width: 35%;">Status</td>
+    <td style="width: 30%; font-weight: bold;">Features</td>
+    <td style="width: 35%; font-weight: bold;">Support</td>
+    <td style="width: 35%; font-weight: bold;">Status</td>
   </tr>
   <tr>
-    <td rowspan="4">Runtime Support</td>
+    <td rowspan="4" style="font-weight: bold;">Runtime Support</td>
     <td>Process</td>
     <td>✅ Supported</td>
   </tr>
@@ -28,23 +28,22 @@ SPEAR is an advanced AI Agent platform designed to support multiple runtime envi
     <td>Kubernetes</td>
     <td>❌ Not supported</td>
   </tr>
-
   <tr>
-    <td rowspan="2">Operating Modes</td>
+    <td rowspan="2" style="font-weight: bold;">Operating Modes</td>
     <td>Cluster Mode</td>
     <td>✅ Supported</td>
   </tr>
-    <tr>
+  <tr>
     <td>Local Mode</td>
     <td>✅ Supported</td>
   </tr>
   <tr>
-    <td>Deployment</td>
+    <td style="font-weight: bold;">Deployment</td>
     <td>Auto Deployment</td>
     <td>⏳ Work in Progress</td>
   </tr>
   <tr>
-    <td rowspan="3">Agent Service</td>
+    <td rowspan="3" style="font-weight: bold;">Agent Service</td>
     <td>Planning</td>
     <td>❌ Not supported</td>
   </tr>
@@ -57,6 +56,7 @@ SPEAR is an advanced AI Agent platform designed to support multiple runtime envi
     <td>⏳ Work in Progress</td>
   </tr>
 </table>
+
 
 - **Runtime Support**:
   - Process
