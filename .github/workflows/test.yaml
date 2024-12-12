@@ -71,7 +71,7 @@ jobs:
 
       - name: Start Colima (with Docker runtime)
         run: |
-          colima start --runtime docker
+          colima start --driver hyperkit --runtime docker
           # colima 默认支持 Docker，但是这里加上参数以确保
           # 若不指定runtime默认也是docker，可以省略该行
 
@@ -80,5 +80,9 @@ jobs:
 
       - name: Test Docker
         run: docker run hello-world
+
+      - name: Show Colima error log (if any)
+        run: |
+          cat /Users/runner/.colima/_lima/colima/ha.stderr.log || echo "No error log found"
 
 
