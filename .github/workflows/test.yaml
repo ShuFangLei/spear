@@ -87,9 +87,7 @@ jobs:
           brew install colima docker docker-compose
           colima version
 
-          colima start --cpu 2 --memory 4 --disk 50
-          
-          cat /Users/runner/.colima/_lima/colima/ha.stderr.log
+          colima start --vm-type=qemu
 
       #    docker --version
       #    docker-compose --version
