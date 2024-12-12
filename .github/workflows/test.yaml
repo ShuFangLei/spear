@@ -34,7 +34,7 @@ jobs:
 
       - name: Install docker
         run: |
-          brew install docker
+          brew install docker colima
           colima start
           sudo docker --version
           docker run hello-world
