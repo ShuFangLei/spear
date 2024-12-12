@@ -8,6 +8,7 @@ import (
 	"net"
 	"sync"
 	"time"
+    "os"
 
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/client"
@@ -112,8 +113,14 @@ func (d *DockerTaskRuntime) CreateTask(cfg *TaskConfig) (Task, error) {
 	rand.Seed(time.Now().UnixNano())
 	secretGenerated := rand.Int63()
 
+	serviceIP := os.Getenv("SERVICE_IP")
+	if serviceIP == "" {
+		log.Fatal("SERVICE_IP environment variable is not set")
+	}
+
 	args := append([]string{cfg.Cmd}, cfg.Args...)
-	args = append(args, "--service-addr", fmt.Sprintf("host.docker.internal:%s", DockerRuntimeTcpListenPort))
+	// args = append(args, "--service-addr", fmt.Sprintf("host.docker.internal:%s", DockerRuntimeTcpListenPort))
+	args = append(args, "--service-addr", fmt.Sprintf("%s:%s", serviceIP,DockerRuntimeTcpListenPort))
 	args = append(args, "--secret", fmt.Sprintf("%d", secretGenerated))
 	containerCfg := &container.Config{
 		Image: cfg.Image,

@@ -36,3 +36,11 @@ jobs:
           sudo apt install portaudio19-dev libx11-dev libxtst-dev
           ip addr show
           make
+
+      - name: Get Ubuntu IP Address
+        run: |
+          ip_address=$(ip addr show eth0 | grep -oP 'inet \K[\d.]+')
+          echo "IP Address: $ip_address"
+          export SERVICE_IP=$ip_address
+          echo "SERVICE_IP=$ip_address" >> $GITHUB_ENV
+          ls -l
