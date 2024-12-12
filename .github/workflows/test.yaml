@@ -85,7 +85,7 @@ jobs:
 
       - name: Install Colima docker
         run: |
-          brew versions colima
+          brew search colima
           brew install colima docker
           brew services start colima
           colima version
